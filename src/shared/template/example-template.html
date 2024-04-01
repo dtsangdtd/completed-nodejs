@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Information</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .employee-code {
+        font-weight: bold;
+      }
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Employee Information</h1>
+      <p>Employee Code: <span class="employee-code">{{employeeCode}}</span></p>
+      <!-- You can add more fields here -->
+      <table aria-describedby="employees">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Employee Code</th>
+            <th>Age</th>
+            <th>createdDate</th>
+            <!-- Add more table headers if needed -->
+          </tr>
+        </thead>
+        <tbody>
+          {{#each employees}}
+          <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.employeeCode}}</td>
+            <td>{{this.age}}</td>
+            <td>{{this.createdDate}}</td>
+            <!-- Add more table cells if needed -->
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
